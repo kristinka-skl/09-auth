@@ -1,14 +1,15 @@
 // у цьому файлі дуже намучилась з валідацією і довелось використовувати чат жпт. Будь ласка, допоможіть розібратись як треба було правильно
 "use client";
 import css from "./NoteForm.module.css";
-import { FormEvent, useEffect, useId, useState } from "react";
+import { FormEvent, useId, useState } from "react";
 import * as Yup from "yup";
-import { createNote } from "../../lib/api";
+
 import type { NoteFormData } from "../../types/note";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useNoteDraftStore } from "@/lib/store/noteStore";
+import { createNote } from "@/lib/api/clientApi";
 
 const initialValues: NoteFormData = {
   title: "",

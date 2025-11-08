@@ -2,10 +2,10 @@
 import css from "./NotePreview.module.css";
 import Modal from "@/components/Modal/Modal";
 
-import { fetchNoteById } from "@/lib/api";
 import { useParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
+import { fetchNoteById } from "@/lib/api/clientApi";
 
 export default function NotePreviewClient() {
   const { id } = useParams<{ id: string }>();
