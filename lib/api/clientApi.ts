@@ -42,7 +42,7 @@ export const fetchNoteById = async (id: string) => {
 export type RegisterRequest = {
   email: string;
   password: string;
-  userName: string;
+  username: string;
 };
 
 export const register = async (data: RegisterRequest) => {
@@ -78,7 +78,6 @@ export const logout = async (): Promise<void> => {
 
 export type UpdateRequest = {
   username: string;
-  email: string;
 };
 export const updateMe = async (data: UpdateRequest) => {
   const res = await nextServer.patch<User>("/users/me", data);
